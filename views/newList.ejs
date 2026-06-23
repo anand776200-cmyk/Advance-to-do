@@ -1,0 +1,36 @@
+<%- layout('layout/boilerPlate') %>
+    <% styles=['newList'] %>
+        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div class="d-flex justify-content-center align-items-center mx-auto p-5 col-5 rounded-3"
+                style="height: auto; background-color:rgb(149, 177, 225)">
+                <form class="col-11" method="post" action="/lists/add">
+                    <div class="mb-3">
+                        <label for="listTitle" class="form-label">List Title : </label>
+                        <input type="text" name="listTitle" class="form-control" id="listTitle" aria-describedby="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">date : </label>
+                        <input type="date" name="tasks[0][date]" class="form-control" id="date" aria-describedby="">
+                    </div>
+                    <div class="task-container">
+                        <div class="task-group">
+                            <div>
+                                <label for="toDo" class="form-label">Enter To Do : </label>
+                                <input type="text" name="tasks[0][title]" class="form-control" required id="toDo"
+                                    aria-describedby="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="des" class="form-label">Descreption : </label>
+                                <input type="text" name="tasks[0][des]" class="form-control" required id="des"
+                                    aria-describedby="">
+                            </div>
+                        </div>
+                        <a class="add-task" href="">Add another Task</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">create a List</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="../public/js/addTask.js"></script>

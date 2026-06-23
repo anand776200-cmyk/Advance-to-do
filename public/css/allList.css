@@ -1,0 +1,100 @@
+/* Dark Mode Background */
+body {
+    background-color: #090101;
+    color: #e0e0e0;
+}
+
+/* Container spacing */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 0;
+}
+
+.card {
+    width: 400px;
+}
+
+/* Dark Card Styling - FIXED LENGTH */
+.card {
+    background: #1e1e1e !important;
+    border: 1px solid #333 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+
+    /* This keeps the card size locked */
+    height: 15rem !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Header */
+.card-header {
+    background-color: #252525 !important;
+    border-bottom: 1px solid #333 !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    padding: 12px 20px !important;
+    flex-shrink: 0;
+}
+
+/* Card Body - SCROLLABLE with BOTTOM GAP */
+.card-body {
+    padding: 1.5rem !important;
+    /* Equal gap on all sides */
+    color: #bbbbbb !important;
+    overflow-y: auto;
+    /* Allows scrolling inside if text is long */
+    flex-grow: 1;
+}
+
+/* Ensure the last task has space below it */
+.card-body>*:last-child {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Custom Sleek Scrollbar */
+.card-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.card-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+    background: #3d5afe;
+}
+
+/* Task Typography */
+.card-title {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.card-text {
+    color: #aaaaaa !important;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #3d5afe !important;
+}
+
+a {
+    text-decoration: none !important;
+}

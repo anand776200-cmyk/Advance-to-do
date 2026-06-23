@@ -1,0 +1,30 @@
+<% layout('layout/boilerPlate') %>
+
+    <% styles=['allList'] %>
+
+        <div class="container">
+
+            <% for(const val of list) { %>
+                <a class="cont" href="/lists/<%= val._id %>">
+                    <div class="card overflow-hidden text-bg-light m-3 col-3 d-inline-block"
+                        style="max-width: 18rem; height: 10rem;">
+                        <div class="card-header overflow-hidden" style=" max-height: 2.4rem;">
+                            <%= val.listTitle %>
+                        </div>
+                        <div class="card-body text-primary">
+                            <% for(const task of val.tasks) { %>
+                                <h5 class="card-title">
+                                    <%= task.title %>
+                                </h5>
+                                <p>
+                                    <%= task.date %>
+                                </p>
+                                <p class="card-text">
+                                    <%= task.des %>
+                                </p>
+                                <% } %>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>

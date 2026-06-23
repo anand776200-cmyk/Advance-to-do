@@ -1,0 +1,21 @@
+body {
+    min-height: 100vh;
+    padding-top: 70px;
+    background-image: url('/images/top-view-notebook-with-checklist-desk.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    position: relative;
+}
+
+/* Dark overlay on whole page */
+body::before {
+    content: "";
+    position: fixed;
+    /* stays fixed across the page */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.229);
+    /* adjust darkness */
+    z-index: -1;
+    /* place it behind content */
+}

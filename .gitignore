@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Production build artifacts (if using a build step)
+dist/
+build/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# EJS specific (if compiling templates, though EJS is usually runtime)
+# *.ejscCopied!   

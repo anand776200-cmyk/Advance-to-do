@@ -1,0 +1,94 @@
+<% layout('layout/boilerPlate') %>
+    <% styles=['task'] %>
+        <% scripts=['task'] %>
+
+            <div class="container d-flex justify-content-center mt-4 mb-5">
+                <div class="col-8">
+                    <div class="d-flex justify-content-between m-3">
+                        <h2 class="text-center text-white mb-4">
+                            <%= list.listTitle %>
+                        </h2>
+                        <div class="ms-3 list-button col-4 d-flex   align-items-center">
+                            <button class="me-3 btn btn-primary mr-3 col-6" data-bs-toggle="modal"
+                                data-bs-target="#addTaskModal">
+                                + Add Task
+                            </button>
+                            <a class="col-6" href="/lists/list/del/<%= list._id %>"> <button
+                                    class="btn btn-danger delete">
+                                    Delete
+                                </button></a>
+                        </div>
+                    </div>
+
+                    <% for (const task of list.tasks) { %>
+                        <div class="each-task d-flex flex-column gap-3 m-3">
+
+                            <a href="/lists/list/<%= list._id %>/<%= task._id %>"
+                                class="task-card text-decoration-none text-white">
+
+                                <div class="p-3 rounded-3">
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="mb-1">
+                                            <%= task.title %>
+                                        </h4><small class="text-white">
+                                            <%= new Date(task.date).toLocaleDateString() %>
+                                        </small>
+                                    </div>
+
+
+
+                                    <p class="mt-2 mb-0">
+                                        <%= task.des %>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <div class="text-end">
+
+                                <button class="btn btn-sm btn-success col-1" data-taskid="<%= task._id %>"
+                                    data-title="<%= task.title %>" data-date="<%= task.date %>"
+                                    data-des="<%= task.des %>" onclick="openEditModal(this)">
+                                    Edit
+                                </button>
+                                <a href="/lists/list/<%= list._id %>/del/<%= task._id %>"
+                                    class=" col-1 btn btn-sm btn-danger">
+                                    Delete
+                                </a>
+                            </div>
+
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="modal fade" id="addTaskModal" tabindex="-1">
+                <div class="modal-dialog">
+
+                    <form action="/lists/list/<%= list._id %>/task" method="POST" class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title ">Add New Task</h5>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <input type="hidden" name="taskId" id="taskId">
+                            <input name="title" id="title" class="form-control" required placeholder="Title">
+
+                            <input type="date" id="date" name="date" class="form-control mt-2">
+
+                            <textarea name="des" id="des" class="form-control mt-2"
+                                placeholder="Description"></textarea>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-success">Add Task</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>

@@ -1,0 +1,74 @@
+/* GLASS CARD */
+
+body {
+    height: 90vh;
+
+}
+
+.innerBox {
+    backdrop-filter: blur(12px);
+    background: rgba(20, 25, 35, 0.55) !important;
+    border-radius: 18px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+    animation: fadeUp 0.9s ease;
+}
+
+/* MAIN HEADING */
+.heading {
+    color: #f5f7fa !important;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    text-shadow: 0 6px 25px rgba(0, 0, 0, 0.8);
+}
+
+/* SUBTEXT */
+.innerBox p {
+    color: #d6dae0;
+    opacity: 0.95;
+    line-height: 1.6;
+    margin-top: 18px;
+    margin-bottom: 40px;
+}
+
+/* BUTTON BASE */
+.button {
+    font-size: 17px;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+/* PRIMARY BUTTON */
+.button:first-child {
+    background: #ffffff;
+    color: #111;
+    border: none;
+}
+
+/* SECONDARY BUTTON */
+.button:last-child {
+    background: transparent;
+    border: 2px solid #e0e4ea;
+    color: #e0e4ea;
+}
+
+/* BUTTON HOVER */
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* FADE-UP ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
